@@ -1,0 +1,32 @@
+.sort {
+    &__item {
+      text-align: center;
+      margin-top: 20px;
+    }
+    &__count {
+      width: 150px;
+      height: 40px;
+      border: none;
+      background-color: #0fbfb9;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    &__name {
+      width: 150px;
+      height: 40px;
+      border: none;
+      background-color: #0fbfb9;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    &__count:hover, &__name:hover{
+      opacity: 0.7;
+    }
+
+}
