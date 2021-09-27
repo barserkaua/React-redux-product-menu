@@ -4,7 +4,7 @@ const initialState = {
     error: false,
     sortByName: false,
     sortByCount: false,
-    newItem: {}
+    newItem: {},
 }
 
 const reducer = (state = initialState, action) => {

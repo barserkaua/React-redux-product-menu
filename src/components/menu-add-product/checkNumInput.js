@@ -1,6 +1,5 @@
 const checkNumInputs = (selector) => {
     const numInputs = document.querySelectorAll(selector);
-
     // check that only numbers are entered
     numInputs.forEach(item => {
         item.addEventListener('input', () => {

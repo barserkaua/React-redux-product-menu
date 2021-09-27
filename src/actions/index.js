@@ -41,5 +41,5 @@ export {
     menuError,
     menuSortByName,
     menuSortByCount,
-    menuAddNewProduct
+    menuAddNewProduct,
 };
