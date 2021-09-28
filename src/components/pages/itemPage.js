@@ -37,7 +37,7 @@ class ItemPage extends Component {
                 <div className="menu__item item_block">
                     <div className="menu__name">{name}</div>
                     <img className="menu__img" src={imageUrl} alt={name}></img>
-                    <div className="menu__weight">Weight: <span>{weight}</span></div>
+                    <div className="menu__weight">Weight: <span>{weight}g</span></div>
                     <div className="menu__count">Count: <span>{count}</span></div>
                     <p className="menu__description">description: <span>{description}</span></p>
                     <div className="menu__size">Size:

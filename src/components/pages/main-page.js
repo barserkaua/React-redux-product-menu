@@ -8,7 +8,7 @@ const MainPage = () => {
         <div>
             <MenuSort/>
             <MenuList/>
-            <MenuAddProduct/>
+            <MenuAddProduct form="form"/>
         </div>
     )
 }

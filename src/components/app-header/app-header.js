@@ -19,7 +19,7 @@ const AppHeader = () => {
             modal.style.display = "block";
             document.body.style.overflow = "hidden";
         }
-        // When the user clicks on (x), close the modal
+        // When the user clicks on (Cancel), close the modal
         closeModal.onclick = function() {
             modal.style.display = "none";
             document.body.style.overflow = "";
