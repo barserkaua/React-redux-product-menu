@@ -10,7 +10,7 @@
         "width": 200,
         "height": 200
       },
-      "id": 3
+      "id": 1
     },
     {
       "name": "Pizza Margherita",
@@ -34,7 +34,7 @@
         "width": 400,
         "height": 400
       },
-      "id": 1
+      "id": 3
     },
     {
       "name": "Greece salad",
@@ -61,16 +61,24 @@
       "id": 5
     },
     {
-      "name": "fsfsfd",
-      "weight": "423",
-      "count": "432",
-      "width": "43243",
-      "height": "4324",
-      "imageUrl": {
-        "src": "blob:http://localhost:3001/fa6adc1d-6b10-4884-8a5d-ef056b05afad"
-      },
-      "description": "dadsa",
+      "name": "sixt",
+      "weight": "6",
+      "count": "6",
+      "width": "6",
+      "height": "6",
+      "imageUrl": {},
+      "description": "",
       "id": 6
+    },
+    {
+      "name": "seven",
+      "weight": "7",
+      "count": "7",
+      "width": "7",
+      "height": "7",
+      "imageUrl": {},
+      "description": "7",
+      "id": 7
     }
   ],
   "upload": []

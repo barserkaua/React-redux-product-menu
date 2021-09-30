@@ -1,10 +1,10 @@
+
 const initialState = {
     menu: [],
     loading: true,
     error: false,
     sortByName: false,
     sortByCount: false,
-    newItem: {},
 }
 
 const reducer = (state = initialState, action) => {
@@ -39,11 +39,28 @@ const reducer = (state = initialState, action) => {
                 sortByName: false,
                 sortByCount: true
             };
-        case 'MENU_ADD_NEW_PRODUCT':
-            return {
-                ...state,
-                menu: [...state.menu, action.newItem]
-            };
+        case 'DELETE_PRODUCT':
+            // we take current id what we target
+            const idx = action.payload;
+            // we find the element by id
+            const itemIndex = state.menu.findIndex(item => item.id === idx);
+
+            let answer = window.confirm('Do you want to delete product?');
+            if (answer === true) {
+                return {
+                    ...state,
+                    menu: [
+                        // we cut all the elements that are located before the element that we delete and after it
+                        ...state.menu.slice(0, itemIndex),
+                        ...state.menu.slice(itemIndex+1)
+                    ]
+                };
+            } else {
+                return {
+                    ...state
+                }
+            }
+
         default:
             return state;
     }

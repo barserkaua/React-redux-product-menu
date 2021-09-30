@@ -29,9 +29,10 @@ const menuSortByCount = () => {
     };
 };
 
-const menuAddNewProduct = () => {
+const deleteProduct = (index) => {
     return {
-        type: 'MENU_ADD_NEW_PRODUCT',
+        type: 'DELETE_PRODUCT',
+        payload: index
     };
 };
 
@@ -41,5 +42,5 @@ export {
     menuError,
     menuSortByName,
     menuSortByCount,
-    menuAddNewProduct,
+    deleteProduct
 };

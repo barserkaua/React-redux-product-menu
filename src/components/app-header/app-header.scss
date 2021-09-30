@@ -12,17 +12,4 @@
         color: #fff;
         text-decoration: none;
     }
-    &__add__product {
-        display: flex;
-        margin-right: 40px;
-        font-size: 18px;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        background: none;
-        border: none;
-    }
-    &__add__product:hover, &__link:hover {
-        opacity: 0.7;
-    }
 }

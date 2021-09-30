@@ -12,7 +12,7 @@ const App = () => {
         <div style={{background: `url(${Background}) center center/cover no-repeat`}} className="app">
             <AppHeader/>
             <Switch>
-                <Route path='/' exact component={MainPage}/>
+                <Route path='/' exact component={() => {return <MainPage/>}}/>
                 <Route path ='/:id' component ={ItemPage}/>
             </Switch>
         </div>

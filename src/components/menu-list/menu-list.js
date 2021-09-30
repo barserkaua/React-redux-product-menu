@@ -55,7 +55,7 @@ class MenuList extends Component {
             })
         }
         // we call the passed function once for each element of the array, forming a new array from the results of calling this function
-        const items = menuItems.map(menuItem => {
+        const items = menuItems.map((menuItem) => {
             return (
                 <MenuListItem
                     key = {menuItem.id}

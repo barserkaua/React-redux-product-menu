@@ -1,6 +1,8 @@
 import React from 'react';
 import './menu-list-item.scss';
 import {Link} from "react-router-dom";
+import {deleteProduct} from "../../actions";
+import {useDispatch} from "react-redux";
 
 const MenuListItem = ({menuItem}) => {
     const {name, count, imageUrl, description, weight, id} = menuItem;
@@ -14,6 +16,7 @@ const MenuListItem = ({menuItem}) => {
             return desc;
         }
     }
+    const dispatch = useDispatch()
 
     return (
         <li className="menu__item">
@@ -22,9 +25,14 @@ const MenuListItem = ({menuItem}) => {
             <div className="menu__weight">Weight: <span>{weight}g</span></div>
             <div className="menu__count">Count: <span>{count} in stock</span></div>
             <p className="menu__description">description: <span>{handleChangeDescription(description)}</span></p>
-            <Link to={`/${id}`}>
-                <button className="menu__btn">More details</button>
-            </Link>
+            <div className="menu__btn">
+                <Link to={`/${id}`}>
+                    <button className="menu__btn__detail">More details</button>
+                </Link>
+                <button type="submit" className="menu__btn__delete" onClick={() => dispatch(deleteProduct(id))}>
+                    <i className="fas fa-trash-alt"></i>
+                </button>
+            </div>
         </li>
     )
 }

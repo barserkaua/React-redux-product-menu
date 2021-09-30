@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuList from '../menu-list';
-import MenuSort from "../menu-sort";
+import MenuSort from "../menu-btns";
 import MenuAddProduct from "../menu-add-product";
 
 const MainPage = () => {

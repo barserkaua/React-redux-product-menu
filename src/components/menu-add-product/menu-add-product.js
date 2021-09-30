@@ -4,9 +4,44 @@ import {postData} from "../../services/resto-service";
 
 const MenuAddProduct = () => {
 
-    const bindPostData = () => {
+    const message = {
+        success: 'Your product has been successfully added',
+        failure: 'Something go wrong...'
+    }
+
+    function bindPostData() {
         // Get the form tag
         const productForm = document.querySelector('form');
+        // Add to form event "submit"
+        productForm.onsubmit = function (e) {
+            // exclude standard browser behavior
+            e.preventDefault();
+            // create a new div block to show us the message with the current state
+            let statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            productForm.appendChild(statusMessage);
+            // create FormData
+            const formData = new FormData(productForm);
+            // transform our data in json format
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+            // post our data into db.json file
+            postData('http://localhost:3000/menu', json)
+                .then(data => {
+                    // clean the form after submitting data
+                    productForm.reset();
+                    console.log(data)
+                    statusMessage.textContent = message.success;
+                })
+                // catch message error
+                .catch(() => statusMessage.textContent = message.failure)
+                .finally(() => {
+                    setTimeout(() => {
+                        // remove message
+                        statusMessage.remove();
+                    }, 3000);
+                });
+        }
+    }
 
         // need to upload a picture file from the form
 
@@ -19,32 +54,6 @@ const MenuAddProduct = () => {
         //fetch('../../upload/images' + encodeURIComponent(entry.name), {method: "PUT", body: photo});
         //alert('your file has been uploaded');
 
-        // Add to form event "submit"
-        productForm.addEventListener('submit', (e) => {
-            // exclude standard browser behavior
-            e.preventDefault();
-            // create FormData
-            const formData = new FormData(productForm);
-            // transform our data in json format
-            const json = JSON.stringify(Object.fromEntries(formData.entries()));
-            // post our data into db.json file
-            postData('http://localhost:3000/menu', json)
-                .then(data => {
-                    console.log(data);
-                    // clean the form after submitting data
-                    productForm.reset();
-                }).catch(() => {
-               console.log('Some error')
-            }).finally(() => {
-                console.log('Finally');
-            })
-        })
-    }
-
-    const some = () => {
-        bindPostData()
-    }
-
     const checkNumInputs = () => {
         const numInputs = document.querySelectorAll('input[type="text"]');
         // check that only numbers are entered
@@ -55,7 +64,6 @@ const MenuAddProduct = () => {
             })
         });
     }
-
 
     return (
         <div className="new__product">
@@ -90,7 +98,7 @@ const MenuAddProduct = () => {
                         <textarea className="form-control form__textarea" name="description" alt="description" placeholder="Write some description..."/>
                     </div>
                     <div className="form__btn">
-                        <button onClick={some} className="submit_btn" name="Add">Add</button>
+                        <button onClick={bindPostData} className="submit_btn" name="Add">Add</button>
                         <button className="cancel_btn" name="Cancel" type="reset">Cancel</button>
                     </div>
                 </form>
