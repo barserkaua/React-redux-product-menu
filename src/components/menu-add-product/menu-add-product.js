@@ -23,7 +23,8 @@ const MenuAddProduct = () => {
             // create FormData
             const formData = new FormData(productForm);
             // transform our data in json format
-            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+            const json = JSON.stringify(Object.fromEntries(formData));
+            console.log(json)
             // post our data into db.json file
             postData('http://localhost:3000/menu', json)
                 .then(data => {
@@ -43,25 +44,14 @@ const MenuAddProduct = () => {
         }
     }
 
-        // need to upload a picture file from the form
-
-        // let photo = document.querySelector('#image-file').files[0],
-        //     entry = document.querySelector('#image-file').files[0];
-        // console.log(productForm);
-        // console.log(photo, entry);
-        // photo.src = URL.createObjectURL(entry);
-
-        //fetch('../../upload/images' + encodeURIComponent(entry.name), {method: "PUT", body: photo});
-        //alert('your file has been uploaded');
-
     const checkNumInputs = () => {
         const numInputs = document.querySelectorAll('input[type="text"]');
         // check that only numbers are entered
         numInputs.forEach(item => {
-            item.addEventListener('input', () => {
+            item.oninput = () => {
                 // when we find not a number, we change it to empty signs
                 item.value = item.value.replace(/\D/, '');
-            })
+            }
         });
     }
 
@@ -95,7 +85,7 @@ const MenuAddProduct = () => {
                     </div>
                     <div>
                         <label>Some description</label>
-                        <textarea className="form-control form__textarea" name="description" alt="description" placeholder="Write some description..."/>
+                        <textarea className="form-control form__textarea" name="description" placeholder="Write some description..."/>
                     </div>
                     <div className="form__btn">
                         <button onClick={bindPostData} className="submit_btn" name="Add">Add</button>

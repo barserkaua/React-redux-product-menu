@@ -1,10 +1,10 @@
 import MainPage from './main-page';
-import CartPage from './cart-page';
 import ItemPage from "./itemPage";
+import CommentPage from "./comment-page";
 
 
 export {
     MainPage,
-    CartPage,
-    ItemPage
+    ItemPage,
+    CommentPage
 };

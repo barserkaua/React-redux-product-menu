@@ -10,6 +10,10 @@ export default class RestoService{
         return await res.json();
     }
     // returns an array of data
+    async getCommentsItems () {
+        return await this.getResource(`/comments/`);
+    }
+    // returns an array of data
     async getMenuItems () {
         return await this.getResource(`/menu/`);
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {StrictMode} from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import {Provider} from 'react-redux';
@@ -19,7 +19,9 @@ ReactDOM.render(
         <ErrorBoundry>
             <RestoServiceContext.Provider value={restoService}>
                 <Router>
-                    <App/>
+                    <StrictMode>
+                        <App/>
+                    </StrictMode>
                 </Router>
             </RestoServiceContext.Provider>
         </ErrorBoundry>

@@ -36,11 +36,27 @@ const deleteProduct = (index) => {
     };
 };
 
+const commentLoaded = (newComment) => {
+    return {
+        type: 'COMMENT_LOADED',
+        payload: newComment
+    };
+};
+
+const commentDelete = (index) => {
+    return {
+        type: 'COMMENT_DELETE',
+        payload: index
+    };
+};
+
 export {
     menuLoaded,
     menuRequested,
     menuError,
     menuSortByName,
     menuSortByCount,
-    deleteProduct
+    deleteProduct,
+    commentLoaded,
+    commentDelete
 };
