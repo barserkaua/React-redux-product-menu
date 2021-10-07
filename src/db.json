@@ -69,6 +69,26 @@
       "imageUrl": {},
       "description": "7",
       "id": 7
+    },
+    {
+      "name": "dasdsa",
+      "weight": "213123",
+      "count": "312",
+      "width": "3123",
+      "height": "3123",
+      "imageUrl": {},
+      "description": "asdas",
+      "id": 8
+    },
+    {
+      "name": "dasdas",
+      "weight": "231",
+      "count": "321",
+      "width": "12",
+      "height": "132",
+      "imageUrl": {},
+      "description": "ads",
+      "id": 9
     }
   ],
   "comments": [
@@ -95,6 +115,46 @@
       "productId": 3,
       "descriptionComment": "some text here",
       "date": "14:00 22.08.2021"
+    },
+    {
+      "descriptionComment": "dsadas",
+      "id": 5
+    },
+    {
+      "descriptionComment": "adsad",
+      "id": 6
+    },
+    {
+      "descriptionComment": "dasdasd",
+      "id": 7
+    },
+    {
+      "descriptionComment": "sad",
+      "id": 8
+    },
+    {
+      "descriptionComment": "asdd",
+      "id": 9
+    },
+    {
+      "descriptionComment": "dasd",
+      "id": 10
+    },
+    {
+      "descriptionComment": "sadasd",
+      "id": 11
+    },
+    {
+      "descriptionComment": "sdfds",
+      "id": 12
+    },
+    {
+      "descriptionComment": "dsad",
+      "id": 13
+    },
+    {
+      "descriptionComment": "afa",
+      "id": 14
     }
   ]
 }

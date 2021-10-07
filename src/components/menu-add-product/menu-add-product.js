@@ -30,7 +30,6 @@ const MenuAddProduct = () => {
                 .then(data => {
                     // clean the form after submitting data
                     productForm.reset();
-                    console.log(data)
                     statusMessage.textContent = message.success;
                 })
                 // catch message error
@@ -48,10 +47,8 @@ const MenuAddProduct = () => {
         const numInputs = document.querySelectorAll('input[type="text"]');
         // check that only numbers are entered
         numInputs.forEach(item => {
-            item.oninput = () => {
-                // when we find not a number, we change it to empty signs
-                item.value = item.value.replace(/\D/, '');
-            }
+            // when we find not a number, we change it to empty signs
+            item.value = item.value.replace(/\D/, '');
         });
     }
 

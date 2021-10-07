@@ -5,24 +5,6 @@
     height: auto;
 }
 
-.add_new_comment {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: 40px;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #fff;
-    cursor: pointer;
-    background-color: coral;
-    border: none;
-}
-
-.add_new_comment:hover {
-    opacity: 0.7;
-}
-
 .comment {
     list-style-type: none;
 }

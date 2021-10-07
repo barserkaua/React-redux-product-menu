@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import WithRestoService from '../hoc/';
 import Spinner from '../spinner';
 import {menuLoaded, menuRequested, menuError, commentLoaded} from '../../actions';
+import MenuItemAddComment from "../menu-item-add-comment";
 
 import './itemPage.css';
 import CommentPage from "./comment-page";
@@ -23,6 +24,7 @@ class ItemPage extends Component {
         }
 
     }
+
 
     render() {
         if(this.props.loading) {
@@ -69,9 +71,7 @@ class ItemPage extends Component {
                         </div>
                     </div>
                 </div>
-                <button className="add_new_comment">
-                    Add new comment
-                </button>
+                <MenuItemAddComment/>
                 <View comments={itemComments}/>
             </div>
         );
