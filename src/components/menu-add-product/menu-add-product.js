@@ -29,6 +29,7 @@ const MenuAddProduct = () => {
             postData('http://localhost:3000/menu', json)
                 .then(data => {
                     // clean the form after submitting data
+                    console.log(data)
                     productForm.reset();
                     statusMessage.textContent = message.success;
                 })
@@ -58,19 +59,19 @@ const MenuAddProduct = () => {
                 <form className="form">
                     <div>
                         <label>Product name</label>
-                        <input className="form-control form__input" name="name" alt="product_name" placeholder="Name product"/>
+                        <input className="form-control form__input" name="name" required alt="product_name" placeholder="Name product"/>
                     </div>
                     <div>
                         <label>Product weight</label>
-                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="weight" alt="weight" placeholder="Weight product"/>
+                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="weight" required alt="weight" placeholder="Weight product"/>
                     </div>
                     <div>
                         <label>Product in stock</label>
-                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="count" alt="count" placeholder="Product in stock"/>
+                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="count" required alt="count" placeholder="Product in stock"/>
                     </div>
                     <div>
                         <label>Product width</label>
-                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="width"  placeholder="Product width"/>
+                        <input onInput={checkNumInputs}  type='text' className="form-control form__input" name="width" required  placeholder="Product width"/>
                     </div>
                     <div>
                         <label>Product height</label>
@@ -82,7 +83,7 @@ const MenuAddProduct = () => {
                     </div>
                     <div>
                         <label>Some description</label>
-                        <textarea className="form-control form__textarea" name="description" placeholder="Write some description..."/>
+                        <textarea className="form-control form__textarea" name="description" required placeholder="Write some description..."/>
                     </div>
                     <div className="form__btn">
                         <button onClick={bindPostData} className="submit_btn" name="Add">Add</button>

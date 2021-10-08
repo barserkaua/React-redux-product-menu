@@ -6,8 +6,10 @@
       "imageUrl": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
       "description": "A Caesar salad (also spelled Cesar and Cesare) is a green salad of romaine lettuce and croutons dressed with lemon juice (or lime juice), olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.\n\nIn its original form, this salad was prepared and served tableside",
       "weight": 220,
-      "width": 200,
-      "height": 200,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
       "id": 1
     },
     {
@@ -16,8 +18,10 @@
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
       "description": "Pizza margherita, as the Italians call it, is a simple pizza hailing from Naples. When done right, margherita pizza features a bubbly crust, crushed San Marzano tomato sauce, fresh mozzarella and basil, a drizzle of olive oil, and a sprinkle of salt. ... This pizza is simple, fresh and a guaranteed crowd pleaser.",
       "weight": 420,
-      "width": 300,
-      "height": 300,
+      "size": {
+        "width": 300,
+        "height": 300
+      },
       "id": 2
     },
     {
@@ -26,8 +30,10 @@
       "imageUrl": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
       "description": "Neapolitan pizza also known as Naples-style pizza, is a style of pizza made with tomatoes and mozzarella cheese. ... This style of pizza gave rise to the New York-style pizza that was first made by Italian immigrants to the United States in the early 20th century.",
       "weight": 680,
-      "width": 400,
-      "height": 400,
+      "size": {
+        "width": 400,
+        "height": 400
+      },
       "id": 3
     },
     {
@@ -36,8 +42,10 @@
       "imageUrl": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
       "description": "Greek salad, is a dish from Greece. It is commonly served as a part of a traditional Greek meal. It is one of the most popular salads in Greece and Cyprus. This is because it is light, refreshing and easy to make.",
       "weight": 320,
-      "width": 250,
-      "height": 250,
+      "size": {
+        "width": 250,
+        "height": 250
+      },
       "id": 4
     },
     {
@@ -46,12 +54,14 @@
       "imageUrl": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
       "description": "Rich, juicy and very flavorful, with generous marbling throughout. A cowboy steak has a short frenched bone; the tomahawk, a long frenched bone.",
       "weight": 500,
-      "width": 310,
-      "height": 310,
+      "size": {
+        "width": 310,
+        "height": 310
+      },
       "id": 5
     },
     {
-      "name": "sixt",
+      "name": "six",
       "weight": "6",
       "count": "6",
       "width": "6",
@@ -69,26 +79,6 @@
       "imageUrl": {},
       "description": "7",
       "id": 7
-    },
-    {
-      "name": "dasdsa",
-      "weight": "213123",
-      "count": "312",
-      "width": "3123",
-      "height": "3123",
-      "imageUrl": {},
-      "description": "asdas",
-      "id": 8
-    },
-    {
-      "name": "dasdas",
-      "weight": "231",
-      "count": "321",
-      "width": "12",
-      "height": "132",
-      "imageUrl": {},
-      "description": "ads",
-      "id": 9
     }
   ],
   "comments": [
@@ -117,44 +107,16 @@
       "date": "14:00 22.08.2021"
     },
     {
-      "descriptionComment": "dsadas",
+      "descriptionComment": "I like this steak",
+      "date": "22:39 08 October 2021",
+      "productId": 5,
       "id": 5
     },
     {
-      "descriptionComment": "adsad",
+      "descriptionComment": "Ummm... Pizzaa",
+      "date": "23:02 08 October 2021",
+      "productId": 3,
       "id": 6
-    },
-    {
-      "descriptionComment": "dasdasd",
-      "id": 7
-    },
-    {
-      "descriptionComment": "sad",
-      "id": 8
-    },
-    {
-      "descriptionComment": "asdd",
-      "id": 9
-    },
-    {
-      "descriptionComment": "dasd",
-      "id": 10
-    },
-    {
-      "descriptionComment": "sadasd",
-      "id": 11
-    },
-    {
-      "descriptionComment": "sdfds",
-      "id": 12
-    },
-    {
-      "descriptionComment": "dsad",
-      "id": 13
-    },
-    {
-      "descriptionComment": "afa",
-      "id": 14
     }
   ]
 }

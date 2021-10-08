@@ -43,6 +43,13 @@ const commentLoaded = (newComment) => {
     };
 };
 
+const commentAdd = (index) => {
+    return {
+        type: 'COMMENT_ADD',
+        payload: index
+    };
+};
+
 const commentDelete = (index) => {
     return {
         type: 'COMMENT_DELETE',
@@ -58,5 +65,6 @@ export {
     menuSortByCount,
     deleteProduct,
     commentLoaded,
-    commentDelete
+    commentAdd,
+    commentDelete,
 };
