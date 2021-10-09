@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {connect, useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 import WithRestoService from '../hoc/';
 import Spinner from '../spinner';
-import {menuLoaded, menuRequested, menuError, commentLoaded, editComment} from '../../actions';
+import {menuLoaded, menuRequested, menuError, commentLoaded} from '../../actions';
 import MenuItemAddComment from "../menu-item-add-comment";
+import MenuEditProduct from "../menu-edit-product";
+import {modalWindow} from "../menu-main-btns/menu-sort";
 
 import './itemPage.css';
 import CommentPage from "./comment-page";
@@ -36,7 +38,7 @@ class ItemPage extends Component {
 
         // looking for the id element what we need
         const item = this.props.menuItems.find(el => +el.id === +this.props.match.params.id)
-        const{name, count, imageUrl, description, weight, width, height, id} = item;
+        const{name, count, imageUrl, description, weight, width, height} = item;
 
         // we get comments from the file db.json
         const {comments} = this.props
@@ -46,7 +48,7 @@ class ItemPage extends Component {
                 return el;
             })
         // get rid of undefined items
-        const itemComments = itemComment.map((comment) => {
+        const itemsComments = itemComment.map((comment) => {
             if (comment !== undefined) {
                 return (
                     <CommentPage
@@ -69,14 +71,15 @@ class ItemPage extends Component {
                             <div className="menu__size">Size:
                                 <span>{width}x{height} (the sizes are specified in millimeters)</span>
                             </div>
-                            <button className="edit_btn">
+                            <button onClick={() => modalWindow('.edit__product', '.cancel_btn')} className="edit_btn">
                                 Edit
                             </button>
                         </div>
                     </div>
                 </div>
                 <MenuItemAddComment/>
-                <View comments={itemComments}/>
+                <ViewComment comments={itemsComments}/>
+                <MenuEditProduct item={item}/>
             </div>
         );
     }
@@ -96,15 +99,16 @@ const mapDispatchToProps = {
     menuLoaded: menuLoaded,
     menuRequested,
     menuError,
-    commentLoaded
+    commentLoaded,
 }
 
-const View = ({comments}) => {
+const ViewComment = ({comments}) => {
     return (
         <ul className="comment__list">
             {comments}
         </ul>
     )
 }
+
 // connect this function allows us to bind together the components that we substitute (MenuList) and redux
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(ItemPage));

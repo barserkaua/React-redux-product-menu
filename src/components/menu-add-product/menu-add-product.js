@@ -2,6 +2,15 @@ import React from 'react';
 import './menu-add-product.scss';
 import {postData} from "../../services/resto-service";
 
+const CheckNumInputs = () => {
+    const numInputs = document.querySelectorAll('input[type="text"]');
+    // check that only numbers are entered
+    numInputs.forEach(item => {
+        // when we find not a number, we change it to empty signs
+        item.value = item.value.replace(/\D/, '');
+    });
+}
+
 const MenuAddProduct = () => {
 
     const message = {
@@ -44,15 +53,6 @@ const MenuAddProduct = () => {
         }
     }
 
-    const checkNumInputs = () => {
-        const numInputs = document.querySelectorAll('input[type="text"]');
-        // check that only numbers are entered
-        numInputs.forEach(item => {
-            // when we find not a number, we change it to empty signs
-            item.value = item.value.replace(/\D/, '');
-        });
-    }
-
     return (
         <div className="new__product">
             <div className="new__product__content">
@@ -63,19 +63,19 @@ const MenuAddProduct = () => {
                     </div>
                     <div>
                         <label>Product weight</label>
-                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="weight" required alt="weight" placeholder="Weight product"/>
+                        <input onInput={CheckNumInputs} type='text' className="form-control form__input" name="weight" required alt="weight" placeholder="Weight product"/>
                     </div>
                     <div>
                         <label>Product in stock</label>
-                        <input onInput={checkNumInputs} type='text' className="form-control form__input" name="count" required alt="count" placeholder="Product in stock"/>
+                        <input onInput={CheckNumInputs} type='text' className="form-control form__input" name="count" required alt="count" placeholder="Product in stock"/>
                     </div>
                     <div>
                         <label>Product width</label>
-                        <input onInput={checkNumInputs}  type='text' className="form-control form__input" name="width" required  placeholder="Product width"/>
+                        <input onInput={CheckNumInputs}  type='text' className="form-control form__input" name="width" required  placeholder="Product width"/>
                     </div>
                     <div>
                         <label>Product height</label>
-                        <input onInput={checkNumInputs} type="text" className="form-control form__input" name="height" required placeholder="Product height"/>
+                        <input onInput={CheckNumInputs} type="text" className="form-control form__input" name="height" required placeholder="Product height"/>
                     </div>
                     <div>
                         <label>Product image</label>
@@ -96,3 +96,5 @@ const MenuAddProduct = () => {
 }
 
 export default MenuAddProduct;
+
+export {CheckNumInputs};

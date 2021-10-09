@@ -141,10 +141,26 @@ const reducer = (state = initialState, action) => {
                     ...state
                 }
             }
-        case 'EDIT_COMMENT':
-            console.log(action.payload)
+        case 'EDIT_PRODUCT':
+            const urlPage = window.location.pathname;
+            const currentIdProduct = urlPage.substring(urlPage.lastIndexOf('/') + 1);
+            const itemIndexId = state.menu.findIndex(item => item.id === +currentIdProduct);
+            const productEditForm = document.querySelector('form');
+
+            const editProduct = {};
+            // Add to form event "submit"
+            productEditForm.onsubmit = function (e) {
+                // exclude standard browser behavior
+                e.preventDefault();
+
+                state.menu[itemIndexId] = editProduct;
+                console.log(state.menu[itemIndexId])
+                console.log(state.menu)
+            }
+
+
             return {
-                ...state
+                ...state,
             }
         default:
             return state;

@@ -57,9 +57,9 @@ const commentDelete = (index) => {
     };
 };
 
-const editComment = (index) => {
+const editProduct = (index) => {
     return {
-        type: 'EDIT_COMMENT',
+        type: 'EDIT_PRODUCT',
         payload: index
     };
 };
@@ -74,5 +74,5 @@ export {
     commentLoaded,
     commentAdd,
     commentDelete,
-    editComment
+    editProduct
 };
