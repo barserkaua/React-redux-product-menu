@@ -60,11 +60,11 @@ const reducer = (state = initialState, action) => {
                         ...state.menu.slice(0, itemIndex),
                         ...state.menu.slice(itemIndex+1)
                     ]
-                console.log(newMenu)
-                let json = JSON.stringify(Object.fromEntries(newMenu));
-                postData('http://localhost:3000/menu', json)
-                    .then(data => console.log(data))
-                    .catch(console.log("Error"))
+                // console.log(newMenu)
+                // let json = JSON.stringify(Object.fromEntries(newMenu));
+                // postData('http://localhost:3000/menu', json)
+                //     .then(data => console.log(data))
+                //     .catch(console.log("Error"))
                 return {
                     ...state,
                     menu: newMenu
@@ -141,7 +141,11 @@ const reducer = (state = initialState, action) => {
                     ...state
                 }
             }
-
+        case 'EDIT_COMMENT':
+            console.log(action.payload)
+            return {
+                ...state
+            }
         default:
             return state;
     }

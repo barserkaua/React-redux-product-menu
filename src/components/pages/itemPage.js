@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 import WithRestoService from '../hoc/';
 import Spinner from '../spinner';
-import {menuLoaded, menuRequested, menuError, commentLoaded} from '../../actions';
+import {menuLoaded, menuRequested, menuError, commentLoaded, editComment} from '../../actions';
 import MenuItemAddComment from "../menu-item-add-comment";
 
 import './itemPage.css';
@@ -25,7 +25,6 @@ class ItemPage extends Component {
 
     }
 
-
     render() {
         if(this.props.loading) {
             return (
@@ -37,7 +36,7 @@ class ItemPage extends Component {
 
         // looking for the id element what we need
         const item = this.props.menuItems.find(el => +el.id === +this.props.match.params.id)
-        const{name, count, imageUrl, description, weight, width, height} = item;
+        const{name, count, imageUrl, description, weight, width, height, id} = item;
 
         // we get comments from the file db.json
         const {comments} = this.props
@@ -66,8 +65,13 @@ class ItemPage extends Component {
                         <div className="menu__weight">Weight: <span>{weight}g</span></div>
                         <div className="menu__count">Count: <span>{count}</span></div>
                         <p className="menu__description">description: <span>{description}</span></p>
-                        <div className="menu__size">Size:
-                            <span>{width}x{height} (the sizes are specified in millimeters)</span>
+                        <div className="menu_bottom_line">
+                            <div className="menu__size">Size:
+                                <span>{width}x{height} (the sizes are specified in millimeters)</span>
+                            </div>
+                            <button className="edit_btn">
+                                Edit
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -57,6 +57,13 @@ const commentDelete = (index) => {
     };
 };
 
+const editComment = (index) => {
+    return {
+        type: 'EDIT_COMMENT',
+        payload: index
+    };
+};
+
 export {
     menuLoaded,
     menuRequested,
@@ -67,4 +74,5 @@ export {
     commentLoaded,
     commentAdd,
     commentDelete,
+    editComment
 };
