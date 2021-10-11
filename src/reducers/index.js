@@ -142,23 +142,34 @@ const reducer = (state = initialState, action) => {
                 }
             }
         case 'EDIT_PRODUCT':
-            const urlPage = window.location.pathname;
-            const currentIdProduct = urlPage.substring(urlPage.lastIndexOf('/') + 1);
-            const itemIndexId = state.menu.findIndex(item => item.id === +currentIdProduct);
-            const productEditForm = document.querySelector('form');
+            const itemIndexId = state.menu.findIndex(item => item.id === action.payload);
+            const productEditForm = document.querySelectorAll('form');
 
-            const editProduct = {};
             // Add to form event "submit"
-            productEditForm.onsubmit = function (e) {
-                // exclude standard browser behavior
-                e.preventDefault();
+            productEditForm.forEach(product => {
+                product.onsubmit = function (e) {
+                    // exclude standard browser behavior
+                    e.preventDefault();
 
-                state.menu[itemIndexId] = editProduct;
-                console.log(state.menu[itemIndexId])
-                console.log(state.menu)
-            }
+                    const formEditData = new FormData(product);
+                    console.log(formEditData)
+                    // transform our data in json format
+                    const editProduct = JSON.stringify(Object.fromEntries(formEditData));
+                    const parsing = JSON.parse(editProduct)
+                    console.log(parsing.name)
 
-
+                    for (let key in state.menu[itemIndexId]){
+                        if (key === 'count') {
+                            state.menu[itemIndexId].count = parsing.count
+                        }
+                        if (key === 'name') {
+                            state.menu[itemIndexId].name = parsing.name
+                        }
+                    }
+                    console.log(state.menu[itemIndexId])
+                    console.log(state.menu)
+                }
+            })
             return {
                 ...state,
             }

@@ -8,48 +8,7 @@ const MenuEditProduct = ({item}) => {
 
     const {name, count, description, weight, width, height} = item;
 
-
-    const editMessage = {
-        success: 'Your product has been successfully added',
-        failure: 'Something go wrong...'
-    }
-
     const dispatch = useDispatch();
-
-    function bindPostEditData() {
-        // Get the form tag
-        const productEditForm = document.querySelector('form');
-        // Add to form event "submit"
-        productEditForm.onsubmit = function (e) {
-            // exclude standard browser behavior
-            e.preventDefault();
-            // create a new div block to show us the message with the current state
-            let statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            productEditForm.appendChild(statusMessage);
-            // create FormData
-            const formEditData = new FormData(productEditForm);
-            // transform our data in json format
-            const json = JSON.stringify(Object.fromEntries(formEditData));
-            console.log(json)
-            // post our data into db.json file
-            //postData('http://localhost:3000/menu', json)
-            //    .then(data => {
-            //        // clean the form after submitting data
-            //        console.log(data)
-            //        productForm.reset();
-            //        statusMessage.textContent = message.success;
-            //    })
-            //    // catch message error
-            //    .catch(() => statusMessage.textContent = message.failure)
-            //    .finally(() => {
-            //        setTimeout(() => {
-            //            // remove message
-            //            statusMessage.remove();
-            //        }, 3000);
-            //    });
-        }
-    }
 
     return (
         <div className="edit__product">
@@ -84,7 +43,7 @@ const MenuEditProduct = ({item}) => {
                         <textarea className="form-control form__textarea" defaultValue={description} name="description" required placeholder="Write some description..."/>
                     </div>
                     <div className="form__btn">
-                        <button onClick={() => dispatch(editProduct())} className="submit_btn" name="Edit">Edit</button>
+                        <button onClick={() => dispatch(editProduct(item.id))} className="submit_btn" name="Edit">Edit</button>
                         <button className="cancel_btn" name="Cancel" type="reset">Cancel</button>
                     </div>
                 </form>

@@ -69,6 +69,26 @@
       "imageUrl": {},
       "description": "7",
       "id": 7
+    },
+    {
+      "name": "Cheburek",
+      "weight": "300",
+      "count": "36",
+      "width": "200",
+      "height": "20",
+      "imageUrl": {},
+      "description": "Its a cheburek baby!",
+      "id": 8
+    },
+    {
+      "name": "Sushi",
+      "weight": "350",
+      "count": "25",
+      "width": "200",
+      "height": "200",
+      "imageUrl": {},
+      "description": "Japanese food",
+      "id": 9
     }
   ],
   "comments": [
